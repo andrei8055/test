@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "<h1>test</h1>"
+  name: sample-app-config
   annotations:
     note: "<h1>test</h1>"
 data:
@@ -13,7 +13,7 @@ data:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: "<h1>test</h1>"
+  name: sample-app-secret
   annotations:
     note: "<h1>test</h1>"
 type: Opaque
@@ -24,27 +24,27 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "<h1>test</h1>"
+  name: sample-app
   annotations:
     note: "<h1>test</h1>"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "<h1>test</h1>"
+      app: sample-app
   template:
     metadata:
       labels:
-        app: "<h1>test</h1>"
+        app: sample-app
         extra: "<h1>test</h1>"
     spec:
       containers:
-        - name: "<h1>test</h1>"
-          image: "nginx:1.23<h1>test</h1>"
+        - name: sample-app
+          image: "<h1>test</h1>"
           ports:
             - containerPort: 80
           envFrom:
             - configMapRef:
-                name: "<h1>test</h1>"
+                name: sample-app-config
             - secretRef:
-                name: "<h1>test</h1>"
+                name: sample-app-secret
