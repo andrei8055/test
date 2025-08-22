@@ -1,3 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-config
+data:
+  APP_NAME: sample-app
+  IMAGE_NAME: nginx
+  IMAGE_TAG: "1.23"
+  CONTAINER_PORT: "80"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sample-app-secret
+type: Opaque
+data:
+  DB_USERNAME: c2FtcGxlX3VzZXI=   # base64("sample_user")
+  DB_PASSWORD: c2VjdXJlcGFzcw==   # base64("securepass")
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
