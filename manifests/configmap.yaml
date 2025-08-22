@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-config
+data:
+  APP_NAME: sample-app
+  IMAGE_NAME: nginx
+  IMAGE_TAG: "1.23"
+  CONTAINER_PORT: "80"
