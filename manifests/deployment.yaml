@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "<h1>aaa</h1>"
+  name: sample-app-config
   annotations:
     note: "<h1>test</h1>"
 data:
