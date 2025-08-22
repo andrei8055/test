@@ -2,25 +2,31 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: sample-app-config
+  annotations:
+    note: "<h1>test</h1>"
 data:
-  APP_NAME: sample-app
-  IMAGE_NAME: nginx
-  IMAGE_TAG: "1.23"
-  CONTAINER_PORT: "80"
+  APP_NAME: "<h1>test</h1>"
+  IMAGE_NAME: "nginx<h1>test</h1>"
+  IMAGE_TAG: "1.23<h1>test</h1>"
+  CONTAINER_PORT: "80<h1>test</h1>"
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: sample-app-secret
+  annotations:
+    note: "<h1>test</h1>"
 type: Opaque
 data:
-  DB_USERNAME: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("sample_user")
-  DB_PASSWORD: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("securepass")
+  DB_USERNAME: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("sample_user<h1>test</h1>")
+  DB_PASSWORD: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("securepass<h1>test</h1>")
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sample-app
+  annotations:
+    note: "<h1>test</h1>"
 spec:
   replicas: 2
   selector:
@@ -30,10 +36,11 @@ spec:
     metadata:
       labels:
         app: sample-app
+        extra: "<h1>test</h1>"
     spec:
       containers:
         - name: sample-app
-          image: nginx:1.23
+          image: "nginx:1.23<h1>test</h1>"
           ports:
             - containerPort: 80
           envFrom:
