@@ -1,13 +1,4 @@
 apiVersion: v1
-kind: TEST
-metadata:
-  name: TEST
-data:
-  APP_NAME: TEST
-  IMAGE_NAME: TEST
-  IMAGE_TAG: "TEST"
-  CONTAINER_PORT: "12345"
----
 kind: ConfigMap
 metadata:
   name: sample-app-config
