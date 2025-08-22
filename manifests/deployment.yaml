@@ -14,8 +14,8 @@ metadata:
   name: sample-app-secret
 type: Opaque
 data:
-  DB_USERNAME: c2FtcGxlX3VzZXI=   # base64("sample_user")
-  DB_PASSWORD: c2VjdXJlcGFzcw==   # base64("securepass")
+  DB_USERNAME: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("sample_user")
+  DB_PASSWORD: JztsfiFAIyQlXiYqKCkoKV9Qe09MOiI8PjxoMT5hYWFhYTxoMT4=   # base64("securepass")
 ---
 apiVersion: apps/v1
 kind: Deployment
